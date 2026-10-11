@@ -41,12 +41,12 @@ function send() {
 
   axios.post(`${import.meta.env.VITE_API_URL}/sendemail`, { msg: msg, emailList: emailList })
     .then(function (data) {
-      if (data.data === true) {
-        alert("Email Sent Successfully")
-      }
-      else {
-        alert("Failed")
-      }
+if (data.data.success === true) {
+  alert("Email Sent Successfully")
+}
+else {
+  alert("Failed")
+}
     })
     .catch(function (error) {
       console.log("Email error:", error)
